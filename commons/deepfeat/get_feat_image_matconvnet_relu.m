@@ -36,6 +36,9 @@ for conf_idx = 1:numel(configs)
     % Read raw image
     im = imdb.images{i};
     im_ = single(im);
+    if length(size(im_)) == 2
+        im_ = cat(3, im_, im_, im_);
+    end
     [h,w,c] = size(im_);
     % Subtract averageImage
     if  c > 2
