@@ -42,6 +42,10 @@ elseif numel(imgset) >= 9 && strcmp(imgset(1:9), 'imagenet6')
 	classes = {'chipmunk', 'racoon', 'rake', 'rhino', 'stoat', 'wheelchair', 'mixed'};
 elseif numel(imgset) >= 3 && strcmp(imgset(1:3), 'bdd')
   classes = {'bike', 'bus', 'car', 'motor', 'person', 'rider', 'trafficlight', 'trafficsign', 'train', 'truck', 'mixed'};
+elseif strcmp(imgset, 'ore') 
+    classes = {'mixed'};
+elseif strcmp(imgset, 'ore_cnn') 
+    classes = {'mixed'};
 else 
 	fprintf("'imgset' must be one of the sets");
 	fprintf(' %s', valid_sets{:});

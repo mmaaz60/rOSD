@@ -1,5 +1,5 @@
-original_imgset = 'vocx';
-cnn_imgset = 'vocx_cnn';
+original_imgset = 'ore';
+cnn_imgset = 'ore_cnn';
 
 % prepare data
 fprintf('Preparing data ...\n');
@@ -45,19 +45,19 @@ compress_proposals;
 combine_proposals;
 
 
-% extract region features
-fprintf('Extracting region features ...\n');
-cd(fullfile(ROOT, 'commons/deepfeat'));
-imgset = cnn_imgset;
-images_imgset = original_imgset;
-get_feat_roipool_matconvnet;
-
-
-% create class data from mixed
-fprintf('Create class imdb from mixed imdb ...\n');
-imgset = cnn_imgset;
-bboxes_imgset = original_imgset;
-create_classes_imdb_from_mixed_cnn;
-
-feat_type = 'features/proposals/vgg19_relu54_matconvnet_77_roi_pooling_noresize';
-copy_class_features_from_mixed;
+% % extract region features
+% fprintf('Extracting region features ...\n');
+% cd(fullfile(ROOT, 'commons/deepfeat'));
+% imgset = cnn_imgset;
+% images_imgset = original_imgset;
+% get_feat_roipool_matconvnet;
+% 
+% 
+% % create class data from mixed
+% fprintf('Create class imdb from mixed imdb ...\n');
+% imgset = cnn_imgset;
+% bboxes_imgset = original_imgset;
+% create_classes_imdb_from_mixed_cnn;
+% 
+% feat_type = 'features/proposals/vgg19_relu54_matconvnet_77_roi_pooling_noresize';
+% copy_class_features_from_mixed;
